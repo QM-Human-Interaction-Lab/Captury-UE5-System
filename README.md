@@ -18,3 +18,6 @@ This system takes information our of other systems in the room and converts it t
 - UE5 Server Machine
 
 This system also includes the left most computer monitor, mouse and keyboard on the desk facing the window
+
+# Data Flow Diagram
+![DataflowDiagram](out/DataflowDiagram/DataflowDiagram.png)
