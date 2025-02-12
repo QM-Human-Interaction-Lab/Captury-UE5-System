@@ -1,0 +1,21 @@
+@startuml
+Start
+partition Booting Machines
+split
+:Turn on Captury Server;
+split again
+:Turn on HIL PCs;
+if (PC1 turning on) then (No)
+:Hold Power Button till light
+turns off and retry;
+else (Yes)
+endif
+split again
+:Turn on Quest Pros;
+if (Is device off) then (Yes)
+:Hold Power Button;
+else (No)
+:Press Power Button;
+endif
+
+@enduml

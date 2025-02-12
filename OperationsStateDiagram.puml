@@ -1,0 +1,62 @@
+This document is a state machine of PlantUML. It was decided to cancel the development of this diagram due to the existance of the activity chart native to PlantUML.
+
+@startuml
+hide empty description
+
+[*] --> Booting
+
+state Booting {
+    state "Boot HIL PC 1" as BootHILPC1
+    state "Boot HIL PC 2" as BootHILPC2
+    state "Boot HIL PC 3" as BootHILPC3
+    state "Boot Captury Server" as BootCapServ
+}
+
+state Launching {
+    state "Launch Unreal Engine Client Project" as LaunchUE5Client
+    state "Launch Unreal Engine Server Project" as LaunchUE5Server
+    state "Launch Captury Live" as LaunchCapturyLive
+    BootHILPC3 --> LaunchUE5Client
+    BootHILPC1 --> LaunchUE5Client
+    BootHILPC2 --> LaunchUE5Server
+    BootCapServ --> LaunchCapturyLive
+}
+
+state InitialiseHMDs {
+    state "Turn on Quest Pro HMD" as OnQPro {
+        OnQPro: Depends on whether the headset has been turned on preivously
+        state OnOrSleep <<fork>>
+        OnOrSleep --> PressPowerButton
+        OnOrSleep --> HoldPowerButton 
+    }
+    state "Set Playspace" as SetSpace {
+
+    }
+    state "Recentre Quest Pro HMD" as Recentre {
+        state "Hold Right Controller Menu Button" as RMenuHold : Oculus Logo Dimple
+        state "Wait for circle to fill" as WaitRecentre : This will fill radially
+    }
+    state "Open Quick Settings" as QuickSetting : Look for the wifi and time symbol on the bottom menu
+
+    OnQPro --> SetSpace
+    SetSpace --> Recentre
+
+    RMenuHold --> WaitRecentre
+
+}
+
+state Captury {
+    
+
+}
+
+state UE5ServerProject {
+
+}
+
+state UE5Client1Project {
+
+}
+
+
+@enduml

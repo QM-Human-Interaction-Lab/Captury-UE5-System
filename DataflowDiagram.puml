@@ -1,0 +1,45 @@
+@startuml
+
+actor "Participant 1" as Part1 #red
+actor "Participant 2" as Part2 #red
+
+entity "Quest Pro 1" as QPro1 #lightblue
+entity "Quest Pro 2" as QPro2 #lightblue
+
+boundary "Client Machine 1" as CM1 #darkblue
+boundary "Client Machine 2" as CM2 #darkblue
+
+database "UE5 Server" as UE5Serv #Magenta
+database "Captury Server" as CapServ #Magenta
+
+collections "Captury Cameras" as CapCam #Green
+
+== Body Tracking ==
+CapCam -[#orange]> CapServ : Video Data
+CapServ -[#darkblue]> UE5Serv : Captury LiveLink Data
+
+== Face & Hand Tracking ==
+Part1 -[#red]> QPro1 : Face Tracking Data
+Part1 -[#red]> QPro1 : Hand Tracking Data
+
+Part2 -[#red]> QPro2 : Face Tracking Data
+Part2 -[#red]> QPro2 : Hand Tracking Data
+
+QPro1 -[#lightblue]> CM1 : HMD 1 MetaSDK Data
+QPro2 -[#lightblue]> CM2 : HMD 2 MetaSDK Data
+
+== Server Process ==
+
+CM1 -[#darkblue]> UE5Serv : Avatar 1 LiveLink
+UE5Serv -[#darkblue]> CM1 : Avatar 2 Data
+
+CM2 -[#darkblue]> UE5Serv : Avatar 2 LiveLink
+UE5Serv -[#darkblue]> CM2 : Avatar 1 Data
+
+== Client Return ==
+
+CM1 -[#orange]> QPro1 : Avatar 2 Display
+CM2 -[#orange]> QPro2 : Avatar 1 Display
+QPro1 -[#orange]> Part1 : HMD Visuals
+QPro2 -[#orange]> Part2 : HMD Visuals
+@enduml
