@@ -24,4 +24,73 @@ Finally, boot the headsets, this is done by either waking them from sleep (press
 \section{Launching Software}
 There is a plethora of software used to make this system work. The Captury machine will be our first focus. Login with the information provided on the inside of the server's swing window where you turned on the machine, then launch the ``CapturyLive'' software. This should be located on the left bar of the desktop.
 
-The next projects we will focus on is the Unreal Engine 5 Server. This is located on the UE5 Server PC. 
+The next projects we will focus on is the Unreal Engine 5 Server. This is located on the UE5 Server PC. Open up the ``Epic Games Launcher'' and switch to the ``Unreal Engine'' tab and select version 5.3.2. Then click the ``QMUL Server'' Project file.
+
+Next, the client machines, these need to have Unreal Engine 5 Client software running. Open up the ``Epic Games Launcher'' and switch to the ``Unreal Engine'' tab and select version 5.3.2. Then click the ``QMUL Client'' Project file.
+
+Finally, the Quest Pro headsets need to be connected to the PCs through a streaming software called ``Quest Link/Air Link''. This software is built into the Oculus operating system and allows for the Quest Headset to stream the PC's screen to the headset. 
+
+The headset should be in passthrough mode (you can see your surroundings) and you should be prompted to confirm/create a boundary. This allows the headset to track your space in the physical world and avoid you bumping into walls. 
+
+\begin{tcolorbox}
+    \textbf{Important:} For best results, chose stationary boundary, stand on the marks provided on the floor and face the other mark.
+\end{tcolorbox}
+
+If this prompt does not appear, you can manually recalibrate the boundary within the quicksettings menu. This is accessed by pressing the Oculus button on the right controller and selecting the settings icon. Then select the ``Guardian'' option and select ``Reset Guardian''. This will prompt you to redraw the boundary.
+
+\begin{tcolorbox}
+    \textbf{Important:} Additionally holding down the right controller's Oculus button will recalibrate the forward direction. Make sure that this is as close to the other marker as possible.
+\end{tcolorbox}
+
+The headset should connect to the WiFi network automatically and then prompt you to connect to the PC. In the case that it doesn't you need to launch the QuestLink menu from the quick settings button named ``Link'' and select the PC from the list of available devices.
+
+The Headset with the green ribbon attached to the headstrap should connect to PC1 and the headset with the blue ribbon should connect to PC3.
+
+Once the headsets are connected to the PCs, you should see a white sterile room extending into the distance. The headsets can be handed to your participants and they can put them on.
+
+\section{Setting up Captury}
+The Captury software is used to capture the physical movements of the participants. This software is running on the Captury machine and is used to stream the data to the UE5 Server.
+
+When the Captury software is launched, it should show a window with a video feed of the observation room. This feed is used to assign skeletons to the participants and track their movements. The Captury software requires a few steps to get going, the right side of the screen should show the tabs ``Track'' and ``Retarget''. The ``Track'' tab is used to assign skeletons to the video capture and to track the movements of the participants and the ``Retarget'' tab is used to format the data for the UE5 Server.
+
+Go to the ``Track'' tab and drag a skeleton onto a person in the video feed. This should automatically scale to their proportions.
+
+\begin{tcolorbox}
+    \textbf{Important: } Ask the participants to stand with their arms outstretched and legs shoulder-width apart. This will help the Captury software to assign the skeleton correctly and scale proportionally.
+\end{tcolorbox}
+
+You can see the progress of the scaling in the bottom right of the screen. Once the skeleton is assigned, you can see the movements of the participant in the video feed. If the skeleton is not assigned correctly, you can delete the skeleton off the participant and try again.
+
+Once the skeleton is assigned, go to the ``Retarget'' tab and look for the QuestBody1 and QuestBody2 labels, you should select the source to be each of the skeletons you assigned. This will format the data for the UE5 Server to use. The data should be formatted correctly if the skeleton is assigned correctly.
+
+\section{Setting up UE5 Server}
+The UE5 server project is used to aggregate the data from the Captury software and send it to the client machines. The LiveLink plugin is used to connect the Captury software to the UE5 Server and to distribute the data to the client machines.
+
+Using the Preset ``QMUL Captury'' from the LiveLink presets it should create a new LiveLink virtual subjects for each client machine, and also a Captury subject for the Captury machine, check that the IP address that the LiveLink plugin is using is the same as the Captury machine. If it isn't, delete the LiveLink subject and create a new one with the correct IP address.
+
+\begin{tcolorbox}
+    \textbf{Important: } The IP address of the Captury machine is: 
+    \begin{verbatim}
+        192.168.1.50
+    \end{verbatim}
+\end{tcolorbox}
+
+The UE5 Server should now be showing the skeletal data from CapturyLive.
+
+\section{Setting up Client Machines}
+The client machines are used to control the avatars in the UE5 scene. It is also used to send facial and hand data to the server. The client machines should have the Quest Pro headsets connected at this point. When the experimenter is ready, click the ``Test in VR'' button in the UE5 editor. This will launch the scene in VR for the participant.
+
+The participant will then need to select with the controllers, which user they are. Typically the green ribbon'd headset is user 1, to match PC1 and the blue ribbon'd headset is user 2, to match PC3. Once the headset has loaded into the scene, the experimenter should ``Alt-Tab'' out of the preview window back into the UE5 editor. In the LiveLink window, there should be a subject with the name ``LiveLink Rebroadcast''. This needs to be assigned to PC2 (the server PC), this will allow the server to send the data to the client machine. Also check that the MetaXR Movement SDK data ``Body'', ``Face'' and ``Hands'' are reading green.
+
+You can Alt-Tab back into the preview window.
+
+\section{Back to the Server Machine}
+Once both client machines are connected to the server, the server needs to be set to recieve the broadcast from the clients. This allows the Face, Body and Hands data to be sent to the server and then back to the clients. This is done by adding a Message Bus Source from PC1, and PC3.
+
+All being well you now should be able to see the avatars in the scene fully captured and transmitting their data to the clients. The system is now ready for use.
+
+\section{In Use}
+Clicking play on the server will launch the server program, allowing the server operator to manipulate various parameters to the avatars. This includes overrides to facial expressions, such as forcing a user to smile even when they are not. This can be used to test the system and see how the avatars react to different stimuli.
+
+\section{Shutting Down}
+Make sure that the headset is removed from the participant and turned off. The headsets should be placed back on the tower. The software in general can be disconnected and shutdown in any order.

@@ -4,3 +4,9 @@
 \contentsline {chapter}{\numberline {2}Using the System}{4}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Booting}{5}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Launching Software}{5}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Setting up Captury}{6}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Setting up UE5 Server}{7}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Setting up Client Machines}{7}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Back to the Server Machine}{7}{section.2.6}%
+\contentsline {section}{\numberline {2.7}In Use}{7}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Shutting Down}{8}{section.2.8}%
