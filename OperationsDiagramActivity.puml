@@ -3,6 +3,7 @@ Start
 partition Booting Machines
 split
 :Turn on Captury Server;
+:Login to Captury Server Machine;
 split again
 :Turn on HIL PCs;
 if (PC1 turning on) then (No)
@@ -17,5 +18,7 @@ if (Is device off) then (Yes)
 else (No)
 :Press Power Button;
 endif
-
+end split
+partition Starting Software
+end
 @enduml

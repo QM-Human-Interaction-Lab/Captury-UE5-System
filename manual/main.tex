@@ -1,0 +1,38 @@
+\documentclass{report}
+\usepackage{graphicx} % Required for inserting images
+
+\usepackage[default,oldstyle,scale=0.95]{opensans} %% Alternatively
+%% use the option 'defaultsans' instead of 'default' to replace the
+%% sans serif font only.
+\usepackage[T1]{fontenc}
+
+\usepackage[a4paper, total={7in, 10in}]{geometry}
+
+\usepackage{parskip}
+\usepackage{setspace}
+\usepackage{fancyref}
+\usepackage{hyperref}
+\usepackage{nameref}
+\usepackage{float}
+\usepackage{adjustbox}
+\usepackage{tcolorbox}
+
+\graphicspath{ {./Images/} }
+
+\title{Captury Unreal Engine 5 Meta Human Interaction System - Doccumentation}
+\author{Karl Clarke}
+\date{Updated: \today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\onehalfspacing % Set line spacing to 1.5
+
+\chapter{Introduction}
+\include{sections/Intro.tex}
+
+\chapter{Using the System}
+\include{sections/Using.tex}
+
+\end{document}
