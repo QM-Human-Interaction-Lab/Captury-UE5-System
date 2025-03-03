@@ -846,6 +846,9 @@ INPUT main.aux
 INPUT ./sections/Intro.aux
 INPUT sections/Intro.aux
 INPUT sections/Intro.aux
+INPUT ./sections/Tour.aux
+INPUT sections/Tour.aux
+INPUT sections/Tour.aux
 INPUT ./sections/Using.aux
 INPUT sections/Using.aux
 INPUT sections/Using.aux
@@ -928,6 +931,15 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/ascender/opensans/OpenSans-Re
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/ascender/opensans/OpenSans-Bold-T1-TOsF.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/ascender/opensans/OpenSans-Bold-T1-TOsF.vf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/ascender/opensans/OpenSans-Bold-T1-TOsF--base.tfm
+INPUT ./sections/Tour.tex
+OUTPUT sections/Tour.aux
+INPUT ./sections/Tour.tex
+INPUT ./sections/Tour.tex
+INPUT ./sections/Tour.tex
+INPUT ./sections/Tour.tex
+INPUT sections/Tour.tex
+INPUT ./sections/Tour.tex
+INPUT sections/Tour.tex
 INPUT ./sections/Using.tex
 OUTPUT sections/Using.aux
 INPUT ./sections/Using.tex
@@ -947,6 +959,9 @@ INPUT main.aux
 INPUT ./sections/Intro.aux
 INPUT sections/Intro.aux
 INPUT sections/Intro.aux
+INPUT ./sections/Tour.aux
+INPUT sections/Tour.aux
+INPUT sections/Tour.aux
 INPUT ./sections/Using.aux
 INPUT sections/Using.aux
 INPUT sections/Using.aux

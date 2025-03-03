@@ -1,12 +1,13 @@
 \contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.1}%
 \contentsline {section}{\numberline {1.1}What is this system?}{3}{section.1.1}%
 \contentsline {section}{\numberline {1.2}How this guide works?}{3}{section.1.2}%
-\contentsline {chapter}{\numberline {2}Using the System}{4}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Booting}{5}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Launching Software}{5}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Setting up Captury}{6}{section.2.3}%
+\contentsline {section}{\numberline {1.3}Tour of the Systems}{4}{section.1.3}%
+\contentsline {chapter}{\numberline {2}Using the System}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Booting}{6}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Launching Software}{6}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Setting up Captury}{7}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Setting up UE5 Server}{7}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Setting up Client Machines}{7}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Back to the Server Machine}{7}{section.2.6}%
-\contentsline {section}{\numberline {2.7}In Use}{7}{section.2.7}%
+\contentsline {section}{\numberline {2.5}Setting up Client Machines}{8}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Back to the Server Machine}{8}{section.2.6}%
+\contentsline {section}{\numberline {2.7}In Use}{8}{section.2.7}%
 \contentsline {section}{\numberline {2.8}Shutting Down}{8}{section.2.8}%
