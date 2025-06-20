@@ -2,22 +2,20 @@
 
 The system installed in room 4.05 contains many moving parts to create the interaction system. This document serves to explain the purpose of each component and instruct on how to operate the system for the purpose of academic experimentation.
 
+The full length document can be found [in this PDF](manual/HILSystem.pdf).
+
 ## General explanation of the components
-The system aims to collect physical expressions from the head, face, body and hands of a subject. In order to do this there are several devices that are in use at the same time. Listed below are the machines and their purpose to the overall system:
+- Captury Machine: This machine is responsible for capturing the physical movements of the participants. It uses a series of cameras and sensors to track the movements and stream the data to the UE5 Server.
+- UE5 Server: This server is responsible for processing the data from the Captury machine and sending it to the client machines. It runs the Unreal Engine 5 software and hosts the virtual environment.
+- Client Machines: These machines are used to run the Unreal Engine 5 client software and display the virtual environment to the participants. They receive the processed data from the UE5 Server and use it to control the avatars in the virtual space.
+- Networking Equipment: This includes routers, switches, and other networking devices that are used to connect all the machines together and allow them to communicate.
+- Meta Quest Pro Headsets: These are the virtual reality headsets used by the participants to experience the virtual environment. They connect to the client machines and receive the video feed from the UE5 Server.
+\end{itemize}
 
-### Motion Capture System
-This system is comprised of three separate components
-- Captury Cameras > FLIR cameras mounted on the ceiling rig
-- Captury Switch > Takes the data from the cameras and consolidates it to one cable
-- Captury Server > Takes the data from the switch and processes to create the skeletons
-
-This system also includes the right most computer monitor, mouse and keyboard on the desk facing the experiment room.
-
-### Unreal Engine 5 Server Machine
-This system takes information our of other systems in the room and converts it to information for other client machines.
-- UE5 Server Machine
-
-This system also includes the left most computer monitor, mouse and keyboard on the desk facing the window
-
-# Data Flow Diagram
-![DataflowDiagram](out/DataflowDiagram/DataflowDiagram.png)
+# Diagrams
+## Data Flow Diagram
+![DataflowDiagram](manual/images/DataflowDiagram.png)
+## System Circuit Diagram
+![SystemSchematic](manual/images/HILCircuitDiagram.png)
+## Network Diagram
+![NetworkMap](manual/images/HILNetworkDiagram.png)
